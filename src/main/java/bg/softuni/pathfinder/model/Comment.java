@@ -13,13 +13,14 @@ public class Comment {
     private long id;
 
     @Column(nullable = false)
-    private Boolean approved;
+    private boolean approved;
 
     @Column(nullable = false)
-    private LocalDateTime created;
+    private Instant created;
 
-    @Column(columnDefinition = "TEXT",name = "text_content",nullable = false)
-    private String textContent;
+    @Column(name = "text_content",columnDefinition = "TEXT",nullable = false)
+    private String content;
+
 
 
 
@@ -29,6 +30,56 @@ public class Comment {
 
     @ManyToOne(optional = false,fetch = FetchType.LAZY)
     private Route route;
+
+    public Comment(){}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+    }
+
+    public Instant getCreated() {
+        return created;
+    }
+
+    public void setCreated(Instant created) {
+        this.created = created;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
+    }
 }
 
 

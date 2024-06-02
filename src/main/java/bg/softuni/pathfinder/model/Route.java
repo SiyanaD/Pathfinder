@@ -11,7 +11,8 @@ public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-   // private String description;
+    @Column(columnDefinition = "TEXT")
+    private String description;
     @Column(name = "gpx_coordinates",columnDefinition = "LONGTEXT")
     private String gpxCoordinates;
 
@@ -24,7 +25,7 @@ public class Route {
     @Column(name = "video_url")
     private String videoUrl;
 
-    private String description;
+
     @OneToMany(targetEntity = Comment.class,mappedBy = "route")
     private Set<Comment> comments;
 

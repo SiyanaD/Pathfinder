@@ -25,6 +25,13 @@ public class Route {
     @Column(name = "video_url")
     private String videoUrl;
 
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
 
     @OneToMany(targetEntity = Comment.class,mappedBy = "route")
     private Set<Comment> comments;
@@ -39,6 +46,23 @@ public class Route {
         this.pictures=new HashSet<>();
         this.categories=new HashSet<>();
     }
+
+    public Set<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(Set<Picture> pictures) {
+        this.pictures = pictures;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
     @ManyToOne(optional = false)
     private User author;
 

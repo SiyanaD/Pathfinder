@@ -1,5 +1,6 @@
 package bg.softuni.pathfinder.web;
 
+import bg.softuni.pathfinder.web.dto.UserRegisterDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,9 @@ public class UserController {
     }
 
     @PostMapping("users/register")
-    public String doRegister(){
+    public String doRegister(UserRegisterDTO data){
         return "index";
     }
+
+
 }

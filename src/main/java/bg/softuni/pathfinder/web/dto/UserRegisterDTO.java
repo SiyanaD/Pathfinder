@@ -1,10 +1,20 @@
 package bg.softuni.pathfinder.web.dto;
 
+import jakarta.validation.constraints.*;
+
 public class UserRegisterDTO {
+    @NotEmpty
+    @NotNull
     private String username;
-    private String fullname;
+    @NotEmpty
+    @Size(min = 5)
+    private String fullName;
+    @Email
     private String email;
+    @Min(0)
+    @Max(90)
     private Integer age;
+    @Size(min = 5)
     private String password;
     private String confirmPassword;
 
@@ -21,11 +31,11 @@ public class UserRegisterDTO {
     }
 
     public String getFullName() {
-        return fullname;
+        return fullName;
     }
 
-    public void setFullName(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {

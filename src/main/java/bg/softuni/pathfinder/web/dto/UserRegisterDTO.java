@@ -3,8 +3,7 @@ package bg.softuni.pathfinder.web.dto;
 import jakarta.validation.constraints.*;
 
 public class UserRegisterDTO {
-    @NotEmpty
-    @NotNull
+    @NotBlank
     private String username;
     @NotEmpty
     @Size(min = 5)

@@ -21,6 +21,8 @@ public class UserController {
             BindingResult bindingResult,
             RedirectAttributes redirectAttributes){
         if (bindingResult.hasErrors()){
+            redirectAttributes.addAttribute
+                    ("registerDate",data);
 
 
             return "register";
